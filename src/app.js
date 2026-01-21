@@ -2,7 +2,6 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const app = express();
 const creareError = require('http-errors');
-const morgan = require('morgan');
 const { userRouter } = require('./routes/userRouter');
 const helmet = require('helmet');
 const cookieParser = require('cookie-parser');
@@ -20,7 +19,6 @@ const rateLimiter = rateLimit({
 app.use(cookieParser());
 app.use(helmet());
 app.use(rateLimiter);
-app.use(morgan('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
