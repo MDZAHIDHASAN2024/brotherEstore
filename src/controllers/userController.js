@@ -104,7 +104,7 @@ const deleteUserById = async (req, res, next) => {
 //user register
 const userRegister = async (req, res, next) => {
   try {
-    const { name, email, password, phone, address } = req.body;
+    const { name, email, password, phone,image, address } = req.body;
 
     const userExists = await User.exists({ email: email });
 
